@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+# Check if "ansible" binary is available in $PATH
+if ! [ -x "$(command -v ansible)" ]; then
+  echo "Ansible missing - please install manually:"
+  echo
+  echo "$ sudo pip3 install --upgrade pip"
+  echo "$ pip3 install ansible"
+  exit 1
+fi
+
+PYTHON_USER_BIN=$(python3 -m site --user-base)/bin
+
+PATH="/opt/Homebrew/bin:$PYTHON_USER_BIN:$PATH"
+ansible-playbook -i ansible/inventory/hosts ansible/playbooks/macos.yml
+
+# if [[ "$(uname)" == "Darwin" ]]; then
+  # PATH="/opt/Homebrew/bin:$PYTHON_USER_BIN:$PATH"
+  # ansible-playbook ./ansible/playbooks/macos.yml  
+# else
+#   PATH="$PYTHON_USER_BIN:$PATH"
+#   ansible-playbook ./ansible/playbooks/linux.yml

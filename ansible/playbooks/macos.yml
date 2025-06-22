@@ -1,0 +1,8 @@
+- hosts: local
+  gather_facts: true
+
+  tasks:
+    - name: Homebrew
+      tags: homebrew
+      import_role:
+        name: homebrew

@@ -1,0 +1,12 @@
+- name: Install Homebrew
+  command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  args:
+    creates: /usr/local/bin/brew
+
+- name: Install applications using Homebrew
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - git
+    - zsh
