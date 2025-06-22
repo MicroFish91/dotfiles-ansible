@@ -1,6 +1,7 @@
 ---
 collections:
   - name: community.general
+  - name: geerlingguy.mac
 
 roles:
   - name: geerlingguy.nodejs

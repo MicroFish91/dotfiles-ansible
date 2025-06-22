@@ -2,8 +2,6 @@
   gather_facts: true
   become: true
 
-  tasks:
-    - name: Homebrew
-      tags: homebrew
-      import_role:
-        name: homebrew
+  roles:
+    - role: geerlingguy.mac.homebrew
+      tags: ["brew"]
