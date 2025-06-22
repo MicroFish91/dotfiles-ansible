@@ -1,7 +1,4 @@
 - hosts: local
-  gather_facts: true
-  become: true
 
   roles:
     - role: geerlingguy.mac.homebrew
-      tags: ["brew"]
