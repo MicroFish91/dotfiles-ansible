@@ -1,0 +1,43 @@
+---
+# Generate Brewfile via: brew bundle dump --file=./Brewfile --force
+brew_taps:
+  - azure/functions
+  - homebrew/bundle
+  - homebrew/cask-fonts
+  - homebrew/services
+
+brew_packages:
+  # Run your GitHub Actions locally
+  - act
+  - python@3.12
+  - azure-cli
+  # cat
+  - bat
+  # ls
+  - cloc
+  # Fuzzy finder
+  - fzf
+  - git
+  - go
+  - golang-migrate
+  - harfbuzz
+  - zstd
+  - little-cms2
+  - gradle
+  - maven
+  - nvm
+  - openssl@1.1
+  - postgresql@14
+  - python@3.10
+  - python@3.11
+  - yarn
+  - zoxide
+  - zsh
+  - azure/functions/azure-functions-core-tools@4
+
+cask_packages:
+  - dbeaver-community
+  - dotnet-runtime
+  - font-fira-code
+  - mongodb-compass
+  - powershell
