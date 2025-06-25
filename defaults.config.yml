@@ -1,12 +1,5 @@
 ---
-# Generate Brewfile via: brew bundle dump --file=./Brewfile --force
-brew_taps:
-  - azure/functions
-  - homebrew/bundle
-  - homebrew/cask-fonts
-  - homebrew/services
-
-brew_packages:
+homebrew_installed_packages:
   # Run your GitHub Actions locally
   - act
   - python@3.12
@@ -35,9 +28,14 @@ brew_packages:
   - zsh
   - azure/functions/azure-functions-core-tools@4
 
-cask_packages:
-  - dbeaver-community
-  - dotnet-runtime
-  - font-fira-code
-  - mongodb-compass
-  - powershell
+homebrew_taps:
+  - azure/functions
+  - homebrew/bundle
+  - homebrew/cask-fonts
+  - homebrew/services
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - chromedriver
+  - docker
+  - google-chrome

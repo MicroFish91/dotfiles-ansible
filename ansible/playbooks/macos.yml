@@ -1,5 +1,8 @@
 - hosts: local
 
+  vars_files:
+    - default.config.yml
+
   pre_tasks:
     - name: "[﬒ dotfiles] Include config.yml overrides"
       include_vars: "{{ item }}"
@@ -8,7 +11,4 @@
 
   roles:
     - role: geerlingguy.mac.homebrew
-      tags: ["brew"]
-
-    - role: brew
       tags: ["brew"]
